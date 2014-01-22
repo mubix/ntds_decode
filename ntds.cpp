@@ -240,10 +240,6 @@ BOOL NTDS::EnumColumns(VOID) {
         if (info.name[0] == 'A'
          && info.name[1] == 'T'
          && info.name[2] == 'T') {
-          // get the column id
-          // oh dear . . .
-          // instead of columnidcolumnid returning the column id
-          // need to use columnidtyp, this will cause problems somewhere ...
           err = JetRetrieveColumn(sesId, tableId, colList.columnidcoltyp,
               &info.uColumnId, sizeof(info.uColumnId), NULL, JET_bitNil, NULL);
           if (err == JET_errSuccess) {
